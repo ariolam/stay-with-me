@@ -55,4 +55,15 @@ router.get("/userProfile", (req, res) => res.render("users/user-profile"));
 // GET route ==> to display the login form to users
 router.get("/login", (req, res) => res.render("auth/login"));
 
+// POST login route ==> to process form data
+router.post("/login", (req, res, next) => {
+    // console.log(req.body);
+    if (username === "" || password === "") {
+        res.render("auth/login", {
+            errorMessage: "Please enter both, username and password to login.",
+        });
+        return;
+    }
+});
+
 module.exports = router;
