@@ -34,7 +34,18 @@ router.post("/signup", async (req, res, next) => {
         console.log(newUser);
         res.redirect("/userProfile");
     } catch (error) {
-        console.log("error");
+        if (error instanceof mongoose.Error.ValidationError) {
+            res.status(500).render("auth/signup", {
+                errorMessage: error.message,
+            });
+        } else if (error.code === 11000) {
+            res.status(500).render("auth/signup", {
+                errorMessage:
+                    "Username needs to be unique.Username is already used.",
+            });
+        } else {
+            next(error);
+        }
     }
 });
 
