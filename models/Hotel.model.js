@@ -18,6 +18,12 @@ const hotelSchema = new Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+    default:
+      "https://www.tripadvisor.com/HotelsList-Sri_Lanka-Luxury-Beach-Resorts-zfp7946468.html",
+    required: true,
+  },
 });
 
 const Hotel = model("Hotel", hotelSchema);
