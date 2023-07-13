@@ -52,4 +52,7 @@ router.post("/signup", async (req, res, next) => {
 //GET route ==> render profile page
 router.get("/userProfile", (req, res) => res.render("users/user-profile"));
 
+// GET route ==> to display the login form to users
+router.get("/login", (req, res) => res.render("auth/login"));
+
 module.exports = router;
