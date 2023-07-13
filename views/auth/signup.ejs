@@ -9,4 +9,8 @@
     </label>
     <button type="submit"> SignUp </button>
   </form>
+  <%#!-- error message will be added here --%>
+  <% if(errorMessage) { %>
+  <p class="error"><%= errorMessage %></p>
+  <% } %>
 </div>

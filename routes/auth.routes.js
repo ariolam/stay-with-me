@@ -11,6 +11,15 @@ router.get("/signup", (req, res) => res.render("auth/signup"));
 // POST route ==> to process form data
 router.post("/signup", async (req, res, next) => {
     console.log(req.body);
+
+    // make sure users fill all mandatory fields:
+    if (!username || !password) {
+        res.render("auth/signup", {
+            errorMessage:
+                "All fields are mandatory. Please provide your username and password.",
+        });
+        return;
+    }
     //copy of body
     const user = { ...req.body };
     //delete property password
