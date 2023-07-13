@@ -23,10 +23,13 @@ router.post("/signup", async (req, res, next) => {
         const newUser = await User.create(user);
         //sending the copy with the encrypted password
         console.log(newUser);
-        res.redirect("/");
+        res.redirect("/userProfile");
     } catch (error) {
         console.log("error");
     }
 });
+
+//GET route ==> render profile page
+router.get("/userProfile", (req, res) => res.render("users/user-profile"));
 
 module.exports = router;
