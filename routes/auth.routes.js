@@ -4,6 +4,8 @@ const router = new Router();
 const bcryptjs = require("bcryptjs");
 // require user model
 const User = require("../models/User.model");
+// require auth middleware
+const { isLoggedIn } = require("../middleware/route-guard.js");
 
 // GET route ==> to display the signup form to users
 router.get("/signup", (req, res) => res.render("auth/signup"));
@@ -51,5 +53,62 @@ router.post("/signup", async (req, res, next) => {
 
 //GET route ==> render profile page
 router.get("/userProfile", (req, res) => res.render("users/user-profile"));
+
+// GET route ==> to display the login form to users
+router.get("/login", (req, res) => res.render("auth/login"));
+
+// POST login route ==> to process form data
+router.post("/login", async (req, res, next) => {
+    console.log("SESSION =====> ", req.session);
+    // console.log(req.body);
+    if (username === "" || password === "") {
+        res.render("auth/login", {
+            errorMessage: "Please enter both, username and password to login.",
+        });
+        return;
+    }
+    try {
+        const userData = req.body;
+        const checkedUser = await User.findOne({
+            username: userData.username,
+        });
+        // Check is user does exists in DB
+        if (checkedUser) {
+            // if so, compare the password with the passwordHash in DB
+            if (
+                bcryptjs.compareSync(
+                    userData.password,
+                    checkedUser.passwordHash
+                )
+            ) {
+                // If password is correct
+                const loggedUser = { ...checkedUser._doc };
+                delete loggedUser.passwordHash;
+                req.session.user = loggedUser;
+                res.redirect("/profile");
+            } else {
+                // If password is incorrect
+                console.log("Password is incorrect");
+                res.render("auth/login", {
+                    errorMessage: "Password is incorrect",
+                    payload: { username: userData.username },
+                });
+            }
+        } else {
+            // No user with this email
+            console.log("No user with this email");
+            res.render("auth/login", {
+                errorMessage: "No user with this email",
+                payload: { username: userData.username },
+            });
+        }
+    } catch (error) {
+        console.log("error occured: ", error);
+        res.render("auth/login", {
+            errorMessage: "There was an error on the server",
+            payload: { username: userData.username },
+        });
+    }
+});
 
 module.exports = router;
