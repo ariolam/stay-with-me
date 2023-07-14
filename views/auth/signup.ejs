@@ -10,7 +10,7 @@
     <button type="submit"> SignUp </button>
   </form>
   <%#!-- error message will be added here --%>
-  <% if(errorMessage) { %>
-  <p class="error"><%= errorMessage %></p>
+  <% if (typeof errorMessage !== 'undefined') { %>
+  <h4 style="color: red"><%=errorMessage%></h4>
   <% } %>
 </div>
