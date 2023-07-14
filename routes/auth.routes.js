@@ -4,6 +4,8 @@ const router = new Router();
 const bcryptjs = require("bcryptjs");
 // require user model
 const User = require("../models/User.model");
+// require auth middleware
+const { isLoggedIn } = require("../middleware/route-guard.js");
 
 // GET route ==> to display the signup form to users
 router.get("/signup", (req, res) => res.render("auth/signup"));
