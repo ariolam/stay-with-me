@@ -57,6 +57,7 @@ router.get("/login", (req, res) => res.render("auth/login"));
 
 // POST login route ==> to process form data
 router.post("/login", async (req, res, next) => {
+    console.log("SESSION =====> ", req.session);
     // console.log(req.body);
     if (username === "" || password === "") {
         res.render("auth/login", {
@@ -81,6 +82,7 @@ router.post("/login", async (req, res, next) => {
                 // If password is correct
                 const loggedUser = { ...checkedUser._doc };
                 delete loggedUser.passwordHash;
+                req.session.user = loggedUser;
                 res.redirect("/profile");
             } else {
                 // If password is incorrect
