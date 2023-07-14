@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "64b159152aca559db0dc00b3"
+  },
+  "date": "18-07-2023",
+  "amount": 500,
+  "hotel": {
+    "$oid": "64b156962aca559db0dc00af"
+  }
+},
+{
+  "_id": {
+    "$oid": "64b15db42aca559db0dc00b6"
+  },
+  "date": "10-07-2023",
+  "amount": 150,
+  "hotel": {
+    "$oid": "64b1579c2aca559db0dc00b0"
+  }
+},
+{
+  "_id": {
+    "$oid": "64b15e7a2aca559db0dc00ba"
+  },
+  "date": "09-07-2023",
+  "amount": 800,
+  "hotel": {
+    "$oid": "64b158652aca559db0dc00b1"
+  }
+}]

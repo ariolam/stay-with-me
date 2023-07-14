@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "64b156962aca559db0dc00af"
+  },
+  "name": "Cycladic Suites",
+  "guests": 2,
+  "pricePerNight": 200,
+  "location": "Santorini",
+  "image": "https://www.theevolista.com/wp-content/uploads/2022/12/15-Stunning-Hotels-in-Santorini-with-Private-Pools-1150x863.jpg"
+},
+{
+  "_id": {
+    "$oid": "64b1579c2aca559db0dc00b0"
+  },
+  "name": "Caldera View",
+  "guests": 5,
+  "pricePerNight": 50,
+  "location": "Santorini",
+  "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/81/30/3f/caption.jpg?w=1200&h=-1&s=1&cx=1846&cy=1833&chk=v1_6ae0a81ae3361e988707"
+},
+{
+  "_id": {
+    "$oid": "64b158652aca559db0dc00b1"
+  },
+  "name": "Anantara",
+  "guests": 7,
+  "pricePerNight": 300,
+  "location": "Sri Lanka",
+  "image": "https://www.bestoflanka.com/images/recommended-stays-sri-lanka/stay-on-the-beach-sri-lanka/02.jpg"
+}]
