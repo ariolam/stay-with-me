@@ -14,17 +14,27 @@ router.get("/signup", (req, res) => res.render("auth/signup"));
 
 // POST route ==> to process form data
 router.post("/signup", async (req, res, next) => {
-    console.log(req.body);
+    //  console.log(req.body);
+    const { username, password } = req.body;
 
-    //TODO username not defined
-    // // make sure users fill all mandatory fields:
-    // if (!username || !password) {
-    //     res.render("auth/signup", {
-    //         errorMessage:
-    //             "All fields are mandatory. Please provide your username and password.",
-    //     });
-    //     return;
-    // }
+    // make sure passwords are strong, regular expressions
+    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    if (!regex.test(password)) {
+        res.status(500).render("auth/signup", {
+            errorMessage:
+                "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.",
+        });
+        return;
+    }
+
+    // make sure users fill all mandatory fields:
+    if (!username || !password) {
+        res.render("auth/signup", {
+            errorMessage:
+                "All fields are mandatory. Please provide your username and password.",
+        });
+        return;
+    }
     //copy of body
     const user = { ...req.body };
     //delete property password
@@ -39,10 +49,12 @@ router.post("/signup", async (req, res, next) => {
         res.redirect("/userProfile");
     } catch (error) {
         console.log("error", error);
+        // make sure users fill in data in the valid format
         if (error instanceof mongoose.Error.ValidationError) {
             res.status(500).render("auth/signup", {
                 errorMessage: error.message,
             });
+            // make sure data in the database is clean - no duplicates
         } else if (error.code === 11000) {
             res.status(500).render("auth/signup", {
                 errorMessage:
@@ -64,14 +76,15 @@ router.get("/login", (req, res) => res.render("auth/login"));
 router.post("/login", async (req, res, next) => {
     console.log("SESSION =====> ", req.session);
     // console.log(req.body);
+    const { username, password } = req.body;
 
     //TODO username not defined
-    // if (username === "" || password === "") {
-    //     res.render("auth/login", {
-    //         errorMessage: "Please enter both, username and password to login.",
-    //     });
-    //     return;
-    // }
+    if (username === "" || password === "") {
+        res.render("auth/login", {
+            errorMessage: "Please enter both, username and password to login.",
+        });
+        return;
+    }
     try {
         const userData = req.body;
         const checkedUser = await User.findOne({
