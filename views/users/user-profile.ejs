@@ -1,1 +1,16 @@
-<p> Hello !</p>
+<p> Hello <%= username %>!</p>
+<h1>My Bookings</h1>
+<% bookings.forEach(booking => { %>
+<p> <%= booking.date %></p>
+<p> <%= booking.amount %></p>
+<div>
+  <p><%= booking.hotel.name %> </p>
+  <p><%= booking.hotel.guests %> </p>
+  <p><%= booking.hotel.pricePerNight %> </p>
+  <p><%= booking.hotel.location %> </p>
+  <p><%= booking.hotel.image%> </p>
+</div>
+
+
+
+<% }) %>

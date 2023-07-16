@@ -6,6 +6,10 @@ const mongoose = require("mongoose");
 const bcryptjs = require("bcryptjs");
 // require user model
 const User = require("../models/User.model");
+// require booking model
+const Booking = require("../models/Booking.model");
+// require booking model
+const Hotel = require("../models/Hotel.model");
 // require auth middleware
 const { isLoggedIn } = require("../middleware/route-guard.js");
 
@@ -67,18 +71,30 @@ router.post("/signup", async (req, res, next) => {
 });
 
 //GET route ==> render profile page
-router.get("/userProfile", (req, res) => res.render("users/user-profile"));
+router.get("/userProfile", isLoggedIn, async (req, res) => {
+    console.log("req.session.user", req.session.user);
+    const { _id: userId, username } = req.session.user;
+    console.log("userId", userId);
+    console.log("username", username);
+
+    try {
+        const bookings = await Booking.find({ user: userId }).populate("hotel");
+        console.log(bookings);
+        res.render("users/user-profile", { username, bookings });
+    } catch (error) {
+        console.log("error occured: ", error);
+    }
+});
 
 // GET route ==> to display the login form to users
 router.get("/login", (req, res) => res.render("auth/login"));
 
 // POST login route ==> to process form data
 router.post("/login", async (req, res, next) => {
-    console.log("SESSION =====> ", req.session);
+    // console.log("SESSION =====> ", req.session);
     // console.log(req.body);
     const { username, password } = req.body;
 
-    //TODO username not defined
     if (username === "" || password === "") {
         res.render("auth/login", {
             errorMessage: "Please enter both, username and password to login.",
@@ -112,13 +128,6 @@ router.post("/login", async (req, res, next) => {
                     payload: { username: userData.username },
                 });
             }
-        } else {
-            // No user with this email
-            console.log("No user with this email");
-            res.render("auth/login", {
-                errorMessage: "No user with this email",
-                payload: { username: userData.username },
-            });
         }
     } catch (error) {
         console.log("error occured: ", error);
