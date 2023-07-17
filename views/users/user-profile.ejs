@@ -8,10 +8,10 @@
   <p><%= booking.hotel.guests %> </p>
   <p><%= booking.hotel.pricePerNight %> </p>
   <p><%= booking.hotel.location %> </p>
-  <img src=" <%= booking.hotel.image%> " alt="booking.hotel.name">
+  <img src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
 </div>
 <% }) %>
-<button> <a href="/destination">Next</a></button>
+<button> <a href="/home"> Next</a></button>
 
 <!-- <form action="/next" method="POST">
   <button type="submit"> <a href="/home">Next</a>/button>

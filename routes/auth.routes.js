@@ -72,10 +72,10 @@ router.post("/signup", async (req, res, next) => {
 
 //GET route ==> render profile page
 router.get("/userProfile", isLoggedIn, async (req, res) => {
-    console.log("req.session.user", req.session.user);
+    // console.log("req.session.user", req.session.user);
     const { _id: userId, username } = req.session.user;
-    console.log("userId", userId);
-    console.log("username", username);
+    // console.log("userId", userId);
+    // console.log("username", username);
 
     try {
         const bookings = await Booking.find({ user: userId }).populate("hotel");
