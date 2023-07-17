@@ -28,7 +28,7 @@ module.exports = (app) => {
                     process.env.NODE_ENV === "production" ? "none" : "lax",
                 secure: process.env.NODE_ENV === "production",
                 httpOnly: true,
-                maxAge: 60000, // 60 * 1000 ms === 1 min
+                maxAge: 600000, // 60 * 1000 ms === 1 min
             }, // added property store to the object we are passing to the session
             store: MongoStore.create({
                 mongoUrl:
