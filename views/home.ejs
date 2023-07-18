@@ -1,27 +1,45 @@
-<h1>Stay-with-me </h1>
-<form>
-  <div>
-    <button>Destination</button>
-
-    <div>
-      <a href="#">Greece</a>
-      <a href="#">Sri Lanka</a>
-      <a href="#">Denmark</a>
-    </div>
-  </div>
-  <!-- <button><a href="">Dates</a></button> -->
-  <div>
-    <button onclick="myFunction()">Number of guests</button>
-
-    <div>
-
-    </div>
-  </div>
-  <input type="search" placeholder="Search">
-  <button>Search</button>
+<h1> Hello </h1>
+<form action="/home" method="GET">
+  <select name="destination">
+    <option>Denmark</option>
+    <option>Santorini</option>
+    <option>Sri Lanka</option>
+  </select>
+  <select name="guests">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+  </select>
+  <button type="submit">Search</button>
 </form>
 
-<article>
+
+
+<div>
+  <h1>Available Hotels</h1>
+  <div>
+    <% hotels.forEach((hotel) => { %>
+    <div>
+      <div>
+        <h5><%= hotel.name %></h5>
+        <h5><%= hotel.guests %></h5>
+        <h5><%= hotel.pricePerNight %></h5>
+        <h5><%= hotel.location %></h5>
+        <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
+</div>
+<!-- <article>
   <img />
   <p></p>
   <p></p>
@@ -43,4 +61,4 @@
   <img />
   <p></p>
   <p></p>
-</article>
+</article> -->

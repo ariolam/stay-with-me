@@ -1,5 +1,5 @@
 <p> Hello <%= username %>!</p>
-<h1>My Bookings</h1>
+<h1 class="bg-primary">My Bookings</h1>
 <% bookings.forEach(booking => { %>
 <p> <%= booking.date %></p>
 <p> <%= booking.amount %></p>
@@ -8,9 +8,11 @@
   <p><%= booking.hotel.guests %> </p>
   <p><%= booking.hotel.pricePerNight %> </p>
   <p><%= booking.hotel.location %> </p>
-  <p><%= booking.hotel.image%> </p>
+  <img src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
 </div>
-
-
-
 <% }) %>
+<button> <a href="/home"> Next</a></button>
+
+<!-- <form action="/next" method="POST">
+  <button type="submit"> <a href="/home">Next</a>/button>
+</form> -->
