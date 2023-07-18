@@ -24,19 +24,23 @@
 
 <div>
   <h1>Available Hotels</h1>
+  <!-- //TODO display no availble hotels for your search  -->
+  <!-- <% if (typeof errorMessage !== 'undefined') { %>
+  <h4 style="color: red"><%=errorMessage%></h4>
+  <% } %>
+  <div> -->
+  <% hotels.forEach((hotel) => { %>
   <div>
-    <% hotels.forEach((hotel) => { %>
     <div>
-      <div>
-        <h5><%= hotel.name %></h5>
-        <h5><%= hotel.guests %></h5>
-        <h5><%= hotel.pricePerNight %></h5>
-        <h5><%= hotel.location %></h5>
-        <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
-      </div>
+      <h5><%= hotel.name %></h5>
+      <h5><%= hotel.guests %></h5>
+      <h5><%= hotel.pricePerNight %></h5>
+      <h5><%= hotel.location %></h5>
+      <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
     </div>
   </div>
-  <% }) %>
+</div>
+<% }) %>
 </div>
 </div>
 <!-- <article>
