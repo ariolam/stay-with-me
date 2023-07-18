@@ -31,14 +31,6 @@ router.get("/home", async (req, res) => {
         res.render("home", { hotels });
     } catch (error) {
         console.log("error", error);
-        //TODO check no availability
-        // if (req.query.destination === null && req.query.guests === null) {
-        //     res.render("home", {
-        //         errorMessage: "There are no available hotels.",
-        //     });
-        // } else {
-        //     next("error", error);
-        // }
     }
 });
 

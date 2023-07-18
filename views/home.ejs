@@ -24,11 +24,7 @@
 
 <div>
   <h1>Available Hotels</h1>
-  <!-- //TODO display no availble hotels for your search  -->
-  <!-- <% if (typeof errorMessage !== 'undefined') { %>
-  <h4 style="color: red"><%=errorMessage%></h4>
-  <% } %>
-  <div> -->
+  <% if (hotels[0]) { %>
   <% hotels.forEach((hotel) => { %>
   <div>
     <div>
@@ -44,6 +40,9 @@
   </div>
 </div>
 <% }) %>
+<%} else { %>
+<p> Sorry there are not available bookings </p>
+<% } %>
 </div>
 </div>
 <!-- <article>
