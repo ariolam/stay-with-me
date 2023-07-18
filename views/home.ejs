@@ -35,7 +35,7 @@
       <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
     </div>
     <form action="/reserve/<%- hotel.id %>" method="POST">
-      <input type="submit" name="reservation" value="<%- hotel.id %>">
+      <button onclick=<%- hotel.id %>> Reserve </button>
     </form>
   </div>
 </div>
