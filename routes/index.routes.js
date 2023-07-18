@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 // require booking model
 const Hotel = require("../models/Hotel.model");
+// require booking model
+const Booking = require("../models/Booking.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -46,9 +48,14 @@ router.post("/reserve/:hotelId", async (req, res) => {
     console.log(hotelId);
     try {
         const hotel = await Hotel.findById(hotelId);
-        
-       
-        res.render("reservation", { hotelId });
+        const { _id: userId, username } = req.session.user;
+        const booking = await Booking.create({
+            user: userId,
+            hotel: hotel.id,
+            date: new Date(),
+            amount: 500, // calculate based on number of nights
+        });
+        res.render("reservation", { hotel, booking });
     } catch (error) {
         console.log("error", error);
     }
