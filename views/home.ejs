@@ -38,6 +38,9 @@
       <h5><%= hotel.location %></h5>
       <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
     </div>
+    <form action="/reserve/<%- hotel.id %>" method="POST">
+      <input type="submit" name="reservation" value="<%- hotel.id %>">
+    </form>
   </div>
 </div>
 <% }) %>

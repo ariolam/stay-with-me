@@ -40,4 +40,18 @@ router.get("/home", async (req, res) => {
     }
 });
 
+// GET POST ==> display reservation
+router.post("/reserve/:hotelId", async (req, res) => {
+    const { hotelId } = req.params;
+    console.log(hotelId);
+    try {
+        const hotel = await Hotel.findById(hotelId);
+        
+       
+        res.render("reservation", { hotelId });
+    } catch (error) {
+        console.log("error", error);
+    }
+});
+
 module.exports = router;
