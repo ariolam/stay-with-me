@@ -11,10 +11,8 @@
 
 <% bookings.forEach(booking => { %>
 <p> <%= booking.date %></p>
-<p> Total: $ <%=booking.hotel.pricePerNight *  booking.nights %> </p>
-<p> <%= booking.nights %></p>
-<p> <%= booking.startDate %></p>
-<div>
+<p> <%= booking.amount %></p>
+<div class="pro">
   <p><%= booking.hotel.name %> </p>
   <p><%= booking.hotel.guests %> </p>
   <p><%= booking.hotel.pricePerNight %> </p>
