@@ -70,4 +70,26 @@ router.post("/home/:bookingId/delete", async (req, res, next) => {
     }
 });
 
+// Get ==> route to display the form to update a specific booking
+router.get("/home/:bookingId/edit", (req, res, next) => {
+    console.log(req.params);
+    const { bookingId } = req.params;
+    Booking.findById(bookingId)
+        .then((bookingToEdit) => {
+            // console.log(bookingToEdit);
+            res.render("booking-edit", { booking: bookingToEdit });
+        })
+        .catch((error) => next(error));
+});
+
+// POST route to make updates on a specific booking
+router.post("/home/:bookingId/edit", (req, res, next) => {
+    const { bookingId } = req.params;
+    const { nights } = req.body;
+
+    Booking.findByIdAndUpdate(bookingId, { nights }, { new: true })
+        .then((updatedBooking) => res.redirect("/userProfile")) // go to the details page to see the updates
+        .catch((error) => next(error));
+});
+
 module.exports = router;

@@ -1,0 +1,13 @@
+<h2>Edit the booking: <%= booking.hotel.name %></h2>
+
+<form action="/home/<%- booking.id %>/edit" method="post">
+  <label> StartDate:
+    <input type="text" name="startDate" value="<%= booking.startDate %>" />
+  </label>
+
+  <label> Nights:
+    <input type="text" name="nights" value="<%= booking.nights %>" />
+  </label>
+
+  <button>Save changes</button>
+</form>

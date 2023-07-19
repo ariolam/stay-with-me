@@ -3,6 +3,7 @@
 <% bookings.forEach(booking => { %>
 <p> <%= booking.date %></p>
 <p> <%= booking.amount %></p>
+<p> <%= booking.nights %></p>
 <div>
   <p><%= booking.hotel.name %> </p>
   <p><%= booking.hotel.guests %> </p>
@@ -13,5 +14,8 @@
 <form action="/home/<%- booking.id %>/delete" method="POST">
   <button>Delete</button>
 </form>
+<button>
+  <a href="/home/<%= booking.id %>/edit"> Update </a> <%#!-- link to redirect to the edit form for each specific booking  --%>
+</button>
 <% }) %>
 <button> <a href="/home"> Next</a></button>
