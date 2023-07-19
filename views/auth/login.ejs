@@ -1,11 +1,14 @@
 <div>
   <h2>Login</h2>
-  <form action="/login" method="POST">
+  <form action="/login" method="POST" enctype="multipart/form-data">
     <label> Username
       <input type="text" name="username" placeholder="enter username" required />
     </label>
     <label>Password
       <input type="password" name="password" placeholder="enter password" required />
+    </label>
+    <label>
+      <input type="file" name="imageUrl" accept="image/png, image/jpg">
     </label>
     <button type="submit">Login</button>
   </form>
