@@ -46,6 +46,8 @@ router.post("/reserve/:hotelId", async (req, res) => {
             hotel: hotel.id,
             date: new Date(),
             amount: 500, // calculate based on number of nights
+            startDate: new Date(),
+            nights: 2,
         });
         res.render("reservation", { hotel, booking });
     } catch (error) {
