@@ -12,13 +12,15 @@ const Booking = require("../models/Booking.model");
 const Hotel = require("../models/Hotel.model");
 // require auth middleware
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
+// require cloudinary.config.js
+const uploader = require("../config/cloudinary.config.js");
 
 // GET route ==> to display the signup form to users
 router.get("/signup", isLoggedOut, (req, res) => res.render("auth/signup"));
 
 // POST route ==> to process form data
 router.post("/signup", async (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     //  console.log(req.body);
     const { username, password } = req.body;
 
@@ -73,15 +75,35 @@ router.post("/signup", async (req, res, next) => {
 
 //GET route ==> render profile page
 router.get("/userProfile", isLoggedIn, async (req, res) => {
-    // console.log("req.session.user", req.session.user);
-    const { _id: userId, username } = req.session.user;
+    console.log("req.session.user", req.session.user);
+    const { _id } = req.session.user;
     // console.log("userId", userId);
     // console.log("username", username);
 
     try {
-        const bookings = await Booking.find({ user: userId }).populate("hotel");
-        console.log(bookings);
-        res.render("users/user-profile", { username, bookings });
+        const bookings = await Booking.find({
+            user: _id,
+        }).populate("hotel");
+        // console.log(bookings);
+        const user = await User.findById(_id);
+        res.render("users/user-profile", { user, bookings });
+    } catch (error) {
+        console.log("error occured: ", error);
+    }
+});
+
+// POST ==> show profile pic
+router.post("/userProfile", uploader.single("imageUrl"), async (req, res) => {
+    const { _id } = req.session.user;
+    console.log(req.file);
+    const image = req.file.path;
+    try {
+        const user = await User.findByIdAndUpdate(
+            _id,
+            { $set: { image } },
+            { new: true }
+        );
+        res.redirect("/userProfile");
     } catch (error) {
         console.log("error occured: ", error);
     }

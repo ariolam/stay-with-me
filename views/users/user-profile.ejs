@@ -1,5 +1,14 @@
-<p> Hello <%= username %>!</p>
+<p> Hello <%= user.username %>!</p>
+<form action="/userProfile" method="POST" enctype="multipart/form-data">
+  <label>
+    <input type="file" name="imageUrl" accept="image/png, image/jpg">
+    <button type="submit">Upload image</button>
+  </label>
+
+</form>
 <h1 class="bg-primary">My Bookings</h1>
+<img src="<%= user.image %>" alt="image" />
+
 <% bookings.forEach(booking => { %>
 <p> <%= booking.date %></p>
 <p> Total: $ <%=booking.hotel.pricePerNight *  booking.nights %> </p>
