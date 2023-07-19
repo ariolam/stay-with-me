@@ -131,10 +131,10 @@ router.post("/login", async (req, res, next) => {
                 });
             }
         } else {
-            // No user with this email
+            // No user with this username
             console.log("No user with this email");
             res.render("auth/login", {
-                errorMessage: "No user with this email",
+                errorMessage: "No user with this username",
                 payload: { username: userData.username },
             });
         }

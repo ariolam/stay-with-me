@@ -21,6 +21,14 @@ const bookingSchema = new Schema({
         ref: "User",
         required: true,
     },
+    startDate: {
+        type: Date,
+        required: true,
+    },
+    nights: {
+        type: Number,
+        required: true,
+    },
 });
 
 const Booking = model("Booking", bookingSchema);

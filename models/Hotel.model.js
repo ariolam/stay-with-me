@@ -10,15 +10,6 @@ const hotelSchema = new Schema({
         type: Number,
         required: true,
     },
-    date: {
-        type: Date,
-        default: Date.now,
-        required: true,
-    },
-    nights: {
-        type: Number,
-        required: true,
-    },
     pricePerNight: {
         type: Number,
         required: true,
