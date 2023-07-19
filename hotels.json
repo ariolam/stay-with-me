@@ -27,4 +27,44 @@
   "pricePerNight": 300,
   "location": "Sri Lanka",
   "image": "https://www.bestoflanka.com/images/recommended-stays-sri-lanka/stay-on-the-beach-sri-lanka/02.jpg"
+},
+{
+  "_id": {
+    "$oid": "64b7e56c55fad4b85ec8970b"
+  },
+  "name": "Ceylon Resort",
+  "guests": 5,
+  "pricePerNight": 100,
+  "location": "Sri Lanka",
+  "image": "https://www.boutiquesrilanka.com/img/pht/_crop/md/23707_slider-5.jpg"
+},
+{
+  "_id": {
+    "$oid": "64b7e77a55fad4b85ec8970c"
+  },
+  "name": "CPH View",
+  "guests": 2,
+  "pricePerNight": 250,
+  "location": "Denmark",
+  "image": "https://wetroommaterials.com/wp-content/uploads/2021/05/Marienlyst-outside-waterfront-2.jpg"
+},
+{
+  "_id": {
+    "$oid": "64b7e85c55fad4b85ec8970d"
+  },
+  "name": "Blue Ocean",
+  "guests": 2,
+  "pricePerNight": 70,
+  "location": "Santorini",
+  "image": "https://images.mrandmrssmith.com/images/828x552/3220976-iconic-santorini-santorini-greece.jpg"
+},
+{
+  "_id": {
+    "$oid": "64b7e8f155fad4b85ec8970e"
+  },
+  "name": "North Wind Luxury Suites",
+  "guests": 2,
+  "pricePerNight": 500,
+  "location": " Santorini",
+  "image": "https://www.hotelscombined.com/rimg/dimg/3f/7b/fdd38392-city-49391-1648f0afe72.jpg?width=1366&height=768&xhint=2210&yhint=1485&crop=true"
 }]

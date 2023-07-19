@@ -1,41 +1,40 @@
-[
-    {
-        "_id": {
-            "$oid": "64b159152aca559db0dc00b3"
-        },
-        "date": "18-07-2023",
-        "amount": 500,
-        "hotel": {
-            "$oid": "64b156962aca559db0dc00af"
-        },
-        "user": {
-            "$oid": "64b142b74408c5c564c320fb"
-        }
-    },
-    {
-        "_id": {
-            "$oid": "64b15db42aca559db0dc00b6"
-        },
-        "date": "10-07-2023",
-        "amount": 150,
-        "hotel": {
-            "$oid": "64b1579c2aca559db0dc00b0"
-        },
-        "user": {
-            "$oid": "64b142b74408c5c564c320fb"
-        }
-    },
-    {
-        "_id": {
-            "$oid": "64b15e7a2aca559db0dc00ba"
-        },
-        "date": "09-07-2023",
-        "amount": 800,
-        "hotel": {
-            "$oid": "64b158652aca559db0dc00b1"
-        },
-        "user": {
-            "$oid": "64b142b74408c5c564c320fb"
-        }
-    }
-]
+[{
+  "_id": {
+    "$oid": "64b782d8c3c32e39ac35e111"
+  },
+  "date": {
+    "$date": "2023-07-19T06:29:44.347Z"
+  },
+  "amount": 500,
+  "hotel": {
+    "$oid": "64b156962aca559db0dc00af"
+  },
+  "user": {
+    "$oid": "64b6b1ba98505e9a4273d6a6"
+  },
+  "startDate": {
+    "$date": "2023-07-19T06:29:44.347Z"
+  },
+  "nights": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b7846799e13c14d6ae646a"
+  },
+  "date": {
+    "$date": "2023-07-19T06:36:23.784Z"
+  },
+  "amount": 500,
+  "hotel": {
+    "$oid": "64b156962aca559db0dc00af"
+  },
+  "user": {
+    "$oid": "64b6b1ba98505e9a4273d6a6"
+  },
+  "startDate": {
+    "$date": "2023-07-19T06:36:23.784Z"
+  },
+  "nights": 2,
+  "__v": 0
+}]
