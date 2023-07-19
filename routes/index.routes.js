@@ -85,9 +85,9 @@ router.get("/home/:bookingId/edit", (req, res, next) => {
 // POST route to make updates on a specific booking
 router.post("/home/:bookingId/edit", (req, res, next) => {
     const { bookingId } = req.params;
-    const { nights } = req.body;
+    const { nights, startDate } = req.body;
 
-    Booking.findByIdAndUpdate(bookingId, { nights }, { new: true })
+    Booking.findByIdAndUpdate(bookingId, { nights, startDate }, { new: true })
         .then((updatedBooking) => res.redirect("/userProfile")) // go to the details page to see the updates
         .catch((error) => next(error));
 });
