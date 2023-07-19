@@ -19,21 +19,6 @@
       <option>10</option>
     </select>
   </label>
-  <input type="date" name="date">
-  <label>Nights
-  <select name="nights">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-    <option>7</option>
-    <option>8</option>
-    <option>9</option>
-    <option>10</option>
-  </select>
-  </label>
   <button type="submit">Search</button>
 </form>
 
@@ -52,7 +37,24 @@
       <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
     </div>
     <form action="/reserve/<%- hotel.id %>" method="POST">
+
+      <input type="date" name="startDate">
+      <label>Nights
+        <select name="nights">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </label>
       <button onclick=<%- hotel.id %>> Reserve </button>
+
     </form>
   </div>
 </div>

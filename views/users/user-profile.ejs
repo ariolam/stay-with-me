@@ -10,5 +10,8 @@
   <p><%= booking.hotel.location %> </p>
   <img src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
 </div>
+<form action="/home/<%- booking.id %>/delete" method="POST">
+  <button>Delete</button>
+</form>
 <% }) %>
 <button> <a href="/home"> Next</a></button>
