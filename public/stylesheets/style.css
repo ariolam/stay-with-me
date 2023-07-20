@@ -6,6 +6,9 @@ body {
     font-family: "Roboto Slab", serif;
 }
 
+/* Welcome page */
+
+
 /* Login and Signup */
 .login-body,
 .signup-body {
@@ -89,6 +92,8 @@ body {
     text-align: center;
     margin: 20px 0 15px;
 }
+
+/* layout */
 .background {
     background-color: #fcf9ec;
 }
