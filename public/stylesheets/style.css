@@ -5,6 +5,9 @@ body {
     font-family: "Roboto Mono", monospace;
     font-family: "Roboto Slab", serif;
 }
+p {
+    font-family: "Roboto Mono", monospace;
+}
 
 /* Welcome page */
 .welcome-wrapper div {
@@ -17,14 +20,32 @@ body {
     width: 50%;
 }
 .welcome {
-    background: url("../images/sea.jpg");
+    background: url("../images/welcome.jpg");
     float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+.welcome-content {
+    width: 480px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 10px;
+    padding: 90px 25px;
+}
+
 .welcome h1 {
     color: white;
+    font-family: "Roboto Slab", serif;
+    font-weight: 900;
+    font-size: 3.5rem;
 }
 .auth-links {
-    background-color: #fcf9ec;
+    background-color: white;
     float: right;
 }
 .links {
@@ -74,10 +95,12 @@ body {
 .signup-link a:hover {
     text-decoration: none;
     background-position: right center;
+    color: white;
 }
 .login-link a:hover {
     text-decoration: none;
     background-position: right center;
+    color: white;
 }
 
 /* Login and Signup */
@@ -168,6 +191,29 @@ body {
 .background {
     background-color: #fcf9ec;
 }
+.logout-btn {
+    position: absolute;
+    right: 75px;
+    top: 12px;
+    width: 160px;
+    height: 53px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    background-image: linear-gradient(
+        to right,
+        #ff731d 0%,
+        #e3996a 51%,
+        #e5610f 100%
+    );
+}
 
 /* home page */
 
@@ -212,12 +258,7 @@ body {
     outline: none;
     cursor: pointer;
     color: white;
-    background-image: linear-gradient(
-        to right,
-        #00d2ff 0%,
-        #3a7bd5 51%,
-        #00d2ff 100%
-    );
+    background: #1746a2;
 }
 
 /* search results */
@@ -278,12 +319,7 @@ input {
     outline: none;
     cursor: pointer;
     color: white;
-    background-image: linear-gradient(
-        to right,
-        #00d2ff 0%,
-        #3a7bd5 51%,
-        #00d2ff 100%
-    );
+    background: #1746a2;
 }
 /* reservation */
 .reservation-wrapper img {
@@ -318,12 +354,7 @@ input {
     outline: none;
     cursor: pointer;
     margin: 90px 45px;
-    background-image: linear-gradient(
-        to right,
-        #00d2ff 0%,
-        #3a7bd5 51%,
-        #00d2ff 100%
-    );
+    background: #1746a2;
 }
 .nav-links button a {
     color: white;
