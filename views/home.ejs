@@ -1,46 +1,14 @@
-<h1> Hello </h1>
-<form action="/home" method="GET">
-  <select name="destination">
-    <option>Denmark</option>
-    <option>Santorini</option>
-    <option>Sri Lanka</option>
-  </select>
-  <label> Guests
-    <select name="guests">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-      <option>9</option>
-      <option>10</option>
-    </select>
-  </label>
-  <button type="submit">Search</button>
-</form>
-
-
-
 <div>
-  <h1>Available Hotels</h1>
-  <% if (hotels[0]) { %>
-  <% hotels.forEach((hotel) => { %>
-  <div>
-    <div>
-      <h5><%= hotel.name %></h5>
-      <h5><%= hotel.guests %></h5>
-      <h5><%= hotel.pricePerNight %></h5>
-      <h5><%= hotel.location %></h5>
-      <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
-    </div>
-    <form action="/reserve/<%- hotel.id %>" method="POST">
-
-      <input type="date" name="startDate">
-      <label>Nights
-        <select name="nights">
+  <h1> Where would you like to stay with me? </h1>
+  <div class="search-hotel">
+    <form action="/home" method="GET">
+      <select name="destination">
+        <option>Denmark</option>
+        <option>Santorini</option>
+        <option>Sri Lanka</option>
+      </select>
+      <label> Guests
+        <select name="guests">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -53,37 +21,46 @@
           <option>10</option>
         </select>
       </label>
-      <button onclick=<%- hotel.id %>> Reserve </button>
-
+      <button type="submit">Search</button>
     </form>
+    <div>
+    </div>
+    <div class="results-hotel">
+      <h1>Available Hotels</h1>
+      <% if (hotels[0]) { %>
+      <% hotels.forEach((hotel) => { %>
+      <div>
+        <div>
+          <h2><%= hotel.name %></h2>
+          <p> Price Per Night<%= hotel.pricePerNight %></p>
+          <p><%= hotel.location %></p>
+          <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
+        </div>
+      </div>
+      <div class="reservation-hotel">
+        <form action="/reserve/<%- hotel.id %>" method="POST">
+          <input type="date" name="startDate">
+          <label>Nights
+            <select name="nights">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </label>
+          <button onclick=<%- hotel.id %>> Reserve </button>
+        </form>
+      </div>
+    </div>
+    <% }) %>
+    <%} else { %>
+    <p> Sorry there are not available bookings </p>
+    <% } %>
   </div>
 </div>
-<% }) %>
-<%} else { %>
-<p> Sorry there are not available bookings </p>
-<% } %>
-</div>
-</div>
-<!-- <article>
-  <img />
-  <p></p>
-  <p></p>
-</article>
-
-<article>
-  <img />
-  <p></p>
-  <p></p>
-</article>
-
-<article>
-  <img />
-  <p></p>
-  <p></p>
-</article>
-
-<article>
-  <img />
-  <p></p>
-  <p></p>
-</article> -->
