@@ -170,3 +170,35 @@ body {
 }
 
 /* home page */
+.home-wrapper h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+.search-hotel {
+    min-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+.search-hotel select {
+    position: relative;
+    left: -3px;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 18px;
+    padding: 19px 29px 12px;
+    margin: -2px;
+}
+.search-btn {
+    position: relative;
+    left: -5px;
+    width: 150px;
+    height: 53px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #00d2ff;
+    color: white;
+}
