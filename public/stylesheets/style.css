@@ -73,11 +73,11 @@ body {
 }
 .signup-link a:hover {
     text-decoration: none;
-    color: white;
+    background-position: right center;
 }
 .login-link a:hover {
     text-decoration: none;
-    color: white;
+    background-position: right center;
 }
 
 /* Login and Signup */
@@ -228,7 +228,8 @@ body {
     width: 300px;
     border-radius: 5px;
 }
-.results-hotel {
+.results-hotel,
+.reservation-results {
     border: 2px solid #3a7bd5;
     border-radius: 10px;
     box-shadow: 10px 5px 5px lightgrey;
@@ -283,4 +284,51 @@ input {
         #3a7bd5 51%,
         #00d2ff 100%
     );
+}
+/* reservation */
+.reservation-wrapper img {
+    width: 300px;
+    border-radius: 5px;
+}
+.reservation-wrapper h1 {
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    margin-top: 40px;
+}
+.reservation-wrapper h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    color: #3a7bd5;
+}
+.reservation-wrapper h3 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    color: #3a7bd5;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-links button {
+    width: 160px;
+    height: 53px;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 90px 45px;
+    background-image: linear-gradient(
+        to right,
+        #00d2ff 0%,
+        #3a7bd5 51%,
+        #00d2ff 100%
+    );
+}
+.nav-links button a {
+    color: white;
+}
+.nav-links button a:hover {
+    text-decoration: none;
+    background-position: right center;
 }
