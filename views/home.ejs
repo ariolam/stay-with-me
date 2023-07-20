@@ -1,4 +1,4 @@
-<div>
+<div class="home-wrapper">
   <h1> Where would you like to stay with me? </h1>
   <div class="search-hotel">
     <form action="/home" method="GET">
@@ -7,7 +7,7 @@
         <option>Santorini</option>
         <option>Sri Lanka</option>
       </select>
-      <label> Guests
+      <label class="guests"> Guests
         <select name="guests">
           <option>1</option>
           <option>2</option>
@@ -21,46 +21,47 @@
           <option>10</option>
         </select>
       </label>
-      <button type="submit">Search</button>
+      <button type="submit" class="search-btn">Search</button>
     </form>
-    <div>
-    </div>
-    <div class="results-hotel">
-      <h1>Available Hotels</h1>
-      <% if (hotels[0]) { %>
-      <% hotels.forEach((hotel) => { %>
-      <div>
-        <div>
-          <h2><%= hotel.name %></h2>
-          <p> Price Per Night<%= hotel.pricePerNight %></p>
-          <p><%= hotel.location %></p>
-          <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
+  </div>
+  <div class="container">
+    <h2>Available Hotels</h2>
+    <div class="row mb-5 mt-5 results-hotel">
+      <div class="col-4 ">
+        <% if (hotels[0]) { %>
+        <% hotels.forEach((hotel) => { %>
+        <img class="hotel-img img-thumbnail" src=" <%=hotel.image%> " alt="<%=hotel.name %>">
+      </div>
+      <div class="col-8">
+        <h2><%= hotel.name %></h2>
+        <h3><%= hotel.location %></h3>
+        <p> Price per night: $<%= hotel.pricePerNight %></p>
+        <div class="reservation-hotel">
+          <form action="/reserve/<%- hotel.id %>" method="POST">
+            <input type="date" name="startDate">
+            <label class="nights">Nights
+              <select name="nights">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </label>
+            <button class="reserve-btn" onclick=<%- hotel.id %>> Reserve </button>
+          </form>
         </div>
       </div>
-      <div class="reservation-hotel">
-        <form action="/reserve/<%- hotel.id %>" method="POST">
-          <input type="date" name="startDate">
-          <label>Nights
-            <select name="nights">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </label>
-          <button onclick=<%- hotel.id %>> Reserve </button>
-        </form>
-      </div>
     </div>
-    <% }) %>
-    <%} else { %>
-    <p> Sorry there are not available bookings </p>
-    <% } %>
+    <div>
+      <% }) %>
+      <%} else { %>
+      <p> Sorry there are not available bookings </p>
+      <% } %>
+    </div>
   </div>
-</div>

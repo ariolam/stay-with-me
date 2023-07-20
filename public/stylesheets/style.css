@@ -170,6 +170,8 @@ body {
 }
 
 /* home page */
+
+/* search form */
 .home-wrapper h1 {
     text-align: center;
     margin-top: 50px;
@@ -191,6 +193,16 @@ body {
     padding: 19px 29px 12px;
     margin: -2px;
 }
+.guests {
+    position: relative;
+    left: -3px;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 18px;
+    padding: 3px 29px 12px;
+    margin: -2px;
+}
 .search-btn {
     position: relative;
     left: -5px;
@@ -199,6 +211,76 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    background: #00d2ff;
     color: white;
+    background-image: linear-gradient(
+        to right,
+        #00d2ff 0%,
+        #3a7bd5 51%,
+        #00d2ff 100%
+    );
+}
+
+/* search results */
+.container {
+    margin-left: 45px;
+}
+.hotel-img {
+    width: 300px;
+    border-radius: 5px;
+}
+.results-hotel {
+    border: 2px solid #3a7bd5;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px lightgrey;
+    padding: 12px 12px;
+}
+.results-hotel h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    color: #3a7bd5;
+}
+.results-hotel h3 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    color: #3a7bd5;
+}
+.reservation-hotel {
+    margin-top: 65px;
+}
+.reservation-hotel select,
+input {
+    position: relative;
+    left: -3px;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 18px;
+    padding: 19px 29px 12px;
+    margin: -2px;
+}
+.nights {
+    position: relative;
+    left: -3px;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 18px;
+    padding: 3px 29px 12px;
+    margin: -2px;
+}
+.reserve-btn {
+    position: relative;
+    left: 140px;
+    width: 160px;
+    height: 53px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    background-image: linear-gradient(
+        to right,
+        #00d2ff 0%,
+        #3a7bd5 51%,
+        #00d2ff 100%
+    );
 }
