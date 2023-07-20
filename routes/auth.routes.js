@@ -29,7 +29,7 @@ router.post("/signup", async (req, res, next) => {
     if (!regex.test(password)) {
         res.status(500).render("auth/signup", {
             errorMessage:
-                "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.",
+                "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter",
         });
         return;
     }
@@ -148,7 +148,7 @@ router.post("/login", async (req, res, next) => {
                 // If password is incorrect
                 console.log("Password is incorrect");
                 res.render("auth/login", {
-                    errorMessage: "Password is incorrect",
+                    errorMessage: "Password is incorrect. Please try again.",
                     payload: { username: userData.username },
                 });
             }
@@ -156,7 +156,7 @@ router.post("/login", async (req, res, next) => {
             // No user with this username
             console.log("No user with this email");
             res.render("auth/login", {
-                errorMessage: "No user with this username",
+                errorMessage: "No user with this username. Please try again.",
                 payload: { username: userData.username },
             });
         }
