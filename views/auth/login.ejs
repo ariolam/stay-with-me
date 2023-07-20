@@ -1,16 +1,20 @@
-<div>
-  <h2>Login</h2>
+<div class="login-wrapper">
   <form action="/login" method="POST">
-    <label> Username
+    <h1>Login</h1>
+    <div class="input-box">
       <input type="text" name="username" placeholder="enter username" required />
-    </label>
-    <label>Password
+      <i class='bx bxs-user'></i>
+    </div>
+    <div class="input-box">
       <input type="password" name="password" placeholder="enter password" required />
-    </label>
-    <button type="submit">Login</button>
+      <i class='bx bxs-lock-alt'></i>
+    </div>
+    <button type="submit" class="login-btn">Login</button>
+
+    <%#!-- error message will be added here --%>
+    <div class="error-message">
+      <% if (typeof errorMessage !== 'undefined') { %>
+      <p><%=errorMessage%></p>
+      <% } %>
+    </div>
   </form>
-  <%#!-- error message will be added here --%>
-  <% if (typeof errorMessage !== 'undefined') { %>
-  <h4 style="color: red"><%=errorMessage%></h4>
-  <% } %>
-</div>
