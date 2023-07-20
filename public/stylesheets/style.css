@@ -7,7 +7,78 @@ body {
 }
 
 /* Welcome page */
+.welcome-wrapper div {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 50%;
+}
+.welcome {
+    background: url("../images/sea.jpg");
+    float: left;
+}
+.welcome h1 {
+    color: white;
+}
+.auth-links {
+    background-color: #fcf9ec;
+    float: right;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 
+.signup-link,
+.login-link {
+    background-image: linear-gradient(
+        to right,
+        #00d2ff 0%,
+        #3a7bd5 51%,
+        #00d2ff 100%
+    );
+    padding: 28px 190px;
+    text-decoration: none;
+    margin: 26px 70px;
+    text-transform: uppercase;
+    line-height: 33px;
+    border-radius: 40px;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    display: block;
+}
+
+.signup-link:hover {
+    background-position: right center;
+}
+.login-link:hover {
+    background-position: right center;
+}
+.login-link a {
+    color: white;
+}
+.signup-link a {
+    color: white;
+}
+.signup-link a:hover {
+    text-decoration: none;
+    color: white;
+}
+.login-link a:hover {
+    text-decoration: none;
+    color: white;
+}
 
 /* Login and Signup */
 .login-body,
