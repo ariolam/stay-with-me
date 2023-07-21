@@ -20,12 +20,11 @@
     <img class="image" src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
     <div class="booking-text">
       <h3><%= booking.hotel.name %> </h3>
+      <h4><%= booking.hotel.location %> </h4>
       <p> <%= booking.startDate %></p>
       <p>Price per night: $<%= booking.hotel.pricePerNight %> </p>
       <p> Total amount: $<%= booking.amount %></p>
       <p><%= booking.hotel.guests %> </p>
-
-      <h4><%= booking.hotel.location %> </h4>
     </div>
   </div>
   <div class="booking-container-bottom">

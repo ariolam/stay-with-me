@@ -552,6 +552,10 @@ input {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
+    border: 2px solid #3a7bd5;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px lightgrey;
+    padding: 12px 12px;
 }
 .container {
     display: flex;
@@ -594,7 +598,53 @@ input {
     flex-direction: column;
 }
 
+.booking-text h3 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    color: #3a7bd5;
+}
+
+.booking-text h4 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    color: #3a7bd5;
+}
+
+.booking-text p {
+    font-family: "Roboto Mono", monospace;
+}
 /* edit booking */
+.edit-wrapper h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin-top: 65px;
+    text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+        0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+        0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+        0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+        0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.save-btn {
+    width: 160px;
+    height: 53px;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #1746a2;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}
 
 /* #FCF9EC */
 /* #B0F4E6 */
