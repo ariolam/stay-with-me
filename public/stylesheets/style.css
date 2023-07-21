@@ -164,6 +164,11 @@ p {
     transform: translateY(-50%);
     font-size: 20px;
 }
+
+.login-wrapper .input-box i {
+    top: 98%;
+}
+
 .login-btn,
 .signup-btn {
     width: 100%;
@@ -193,6 +198,7 @@ p {
 }
 .logout-btn {
     position: absolute;
+    display: block;
     right: 75px;
     top: 12px;
     width: 160px;
@@ -204,6 +210,8 @@ p {
     font-size: 20px;
     font-family: "Roboto Slab", serif;
     font-weight: 300;
+    letter-spacing: 2px;
+    transition: 0.5s;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -220,14 +228,33 @@ p {
 /* search form */
 .home-wrapper h1 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 177px;
+    font-family: "Roboto Slab", serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    opacity: 0.8;
+    text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+        0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+        0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+        0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+        0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
 }
+
+.home-wrapper h2 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
 .search-hotel {
     min-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 115px;
 }
 .search-hotel select {
     position: relative;
@@ -236,8 +263,14 @@ p {
     outline: none;
     background: white;
     font-size: 18px;
-    padding: 19px 29px 12px;
+    padding: 19px 29px 15px;
     margin: -2px;
+    width: 189px;
+}
+.destination {
+    height: 67px;
+    top: 5px;
+    font-family: "Roboto Mono", monospace;
 }
 .guests {
     position: relative;
@@ -246,25 +279,37 @@ p {
     outline: none;
     background: white;
     font-size: 18px;
-    padding: 3px 29px 12px;
+    padding: 3px 29px 15px;
     margin: -2px;
+    height: 67px;
+    font-family: "Roboto Mono", monospace;
 }
+
 .search-btn {
     position: relative;
     left: -5px;
-    width: 150px;
-    height: 53px;
+    top: 5px;
+    width: 153px;
+    height: 67px;
     border: none;
     outline: none;
     cursor: pointer;
     color: white;
     background: #1746a2;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: 1px;
 }
 
 /* search results */
 .container {
     margin-left: 45px;
 }
+.available-header {
+    margin-top: 150px;
+}
+
 .hotel-img {
     width: 300px;
     border-radius: 5px;
@@ -300,15 +345,19 @@ input {
     padding: 19px 29px 12px;
     margin: -2px;
 }
+.reservation-hotel input {
+    font-family: "Roboto Mono", monospace;
+}
 .nights {
     position: relative;
-    left: -3px;
+    left: -6px;
     border: none;
     outline: none;
     background: white;
     font-size: 18px;
-    padding: 3px 29px 12px;
+    padding: 3px 29px 3px;
     margin: -2px;
+    font-family: "Roboto Mono", monospace;
 }
 .reserve-btn {
     position: relative;
@@ -320,6 +369,11 @@ input {
     cursor: pointer;
     color: white;
     background: #1746a2;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: 1px;
+    border-radius: 15px;
 }
 /* reservation */
 .reservation-wrapper img {
@@ -328,8 +382,18 @@ input {
 }
 .reservation-wrapper h1 {
     text-align: center;
+    margin: 125px 178px;
     font-family: "Roboto Slab", serif;
-    margin-top: 40px;
+    font-weight: 900;
+    font-size: 3.5rem;
+    opacity: 0.6;
+    text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+        0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+        0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+        0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+        0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+        0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+        0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
 }
 .reservation-wrapper h2 {
     font-family: "Roboto Slab", serif;
@@ -355,6 +419,11 @@ input {
     cursor: pointer;
     margin: 90px 45px;
     background: #1746a2;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    font-size: 19px;
+    letter-spacing: 1px;
+    border-radius: 15px;
 }
 .nav-links button a {
     color: white;

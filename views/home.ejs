@@ -2,10 +2,10 @@
   <h1> Where would you like to stay with me? </h1>
   <div class="search-hotel">
     <form action="/home" method="GET">
-      <select name="destination">
-        <option>Denmark</option>
-        <option>Santorini</option>
-        <option>Sri Lanka</option>
+      <select class="destination" name="destination">
+        <option class="country">Denmark</option>
+        <option class="country">Santorini</option>
+        <option class="country">Sri Lanka</option>
       </select>
       <label class="guests"> Guests
         <select name="guests">
@@ -25,7 +25,7 @@
     </form>
   </div>
   <div class="container">
-    <h2>Available Hotels</h2>
+    <h2 class="available-header">Available Hotels</h2>
     <div class="row mb-5 mt-5 results-hotel">
       <div class="col-4 ">
         <% if (hotels[0]) { %>
