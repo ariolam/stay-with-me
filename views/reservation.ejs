@@ -1,13 +1,19 @@
-<h1> Your reservation is successful </h1>
+<div class="button">
+  <h1> Your reservation is successful </h1>
 
-<p> <%= booking.date %></p>
-<p> <%= booking.amount %></p>
-<div>
+  <h4>We are pleased to inform you that your booking at <%= hotel.name %> is confirmed</h4>
   <p><%= hotel.name %> </p>
-  <p><%= hotel.guests %> </p>
-  <p><%= hotel.pricePerNight %> </p>
-  <p><%= hotel.location %> </p>
   <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
+  <p> <%= booking.date %></p>
+  <p>Price per night: $<%= hotel.pricePerNight %> </p>
+  <p>Total amount: $<%= booking.amount %></p>
+  <div>
+
+    <p><%= hotel.guests %> </p>
+
+    <p><%= hotel.location %> </p>
+
+  </div>
+  <button> <a href="/home"> Home </a></button>
+  <button> <a href="/userProfile"> Profile </a></button>
 </div>
-<button> <a href="/home"> Home </a></button>
-<button> <a href="/userProfile"> Profile </a></button>

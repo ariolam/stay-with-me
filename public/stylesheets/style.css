@@ -41,6 +41,38 @@ body {
 }
 .image {
   padding-bottom: 30px;
+  float: left;
+  width: 350px;
+  height: 350px;
+  background-size: cover;
 }
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-container-top {
+  display: flex;
+  gap: 20px;
+}
+.booking-container-bottom {
+  display: flex;
+  padding-bottom: 20px;
+  gap: 5px;
+}
+
+.booking-button {
+  width: 150px;
+}
+.booking-text {
+  display: flex;
+  flex-direction: column;
+}
+
 /* #FCF9EC */
 /* #B0F4E6 */
