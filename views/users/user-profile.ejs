@@ -1,19 +1,18 @@
 <div class="main">
   <h2> 👋🏻 Hello <%= user.username %>!</h2>
-  <h4>Let's plan your next journey with us...</h4>
+  <p>Let's plan your next journey with us...</p>
   <p>We are greatful to have you as our customer.</p>
 </div>
 
 <form class="profile" action="/userProfile" method="POST" enctype="multipart/form-data">
-  <img src="<%= user.image %>" style="max-height:75px;width:90px;" alt="image" />
-  <label>
+  <img class="img-upload" src="<%= user.image %>" />
+  <label class="profile-img">
     <input type="file" id="file-input" name="imageUrl" accept="image/png, image/jpg">
-    <button style="margin: auto; text-align: center;" type="submit">Upload image</button>
+    <button style="margin: auto; text-align: center; width: 120px;" type="submit">Upload image</button>
   </label>
 </form>
 
 <h1 class="button">My Bookings</h1>
-
 
 <% bookings.forEach(booking => { %>
 <div class="booking-container">
@@ -21,17 +20,14 @@
     <img class="image" src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
     <div class="booking-text">
       <h3><%= booking.hotel.name %> </h3>
-      <p> <%= booking.date %></p>
+      <h4><%= booking.hotel.location %> </h4>
+      <p> <%= booking.startDate %></p>
       <p>Price per night: $<%= booking.hotel.pricePerNight %> </p>
       <p> Total amount: $<%= booking.amount %></p>
       <p><%= booking.hotel.guests %> </p>
-
-      <h4><%= booking.hotel.location %> </h4>
     </div>
   </div>
   <div class="booking-container-bottom">
-
-
     <form action="/home/<%- booking.id %>/delete" method="POST">
       <button class="booking-button">Delete</button>
     </form>
@@ -41,6 +37,4 @@
   </div>
 </div>
 <% }) %>
-
-
 <button class="next"> <a href="/home"> Next</a></button>
