@@ -76,18 +76,28 @@ router.get("/home/:bookingId/edit", (req, res, next) => {
     const { bookingId } = req.params;
     Booking.findById(bookingId)
         .then((bookingToEdit) => {
-            // console.log(bookingToEdit);
+            console.log("bookingToEdit", bookingToEdit);
             res.render("booking-edit", { booking: bookingToEdit });
         })
         .catch((error) => next(error));
 });
 
 // POST route to make updates on a specific booking
-router.post("/home/:bookingId/edit", (req, res, next) => {
+router.post("/home/:bookingId/edit", async (req, res, next) => {
     const { bookingId } = req.params;
     const { nights, startDate } = req.body;
+    console.log("UPDATE", req.body);
 
-    Booking.findByIdAndUpdate(bookingId, { nights, startDate }, { new: true })
+    const booking = await Booking.findById(bookingId);
+    const hotel = await Hotel.findById(booking.hotel);
+    const pricePerNight = hotel.pricePerNight;
+    const amount = pricePerNight * nights;
+    console.log("date", Date.parse(startDate));
+    Booking.findByIdAndUpdate(
+        bookingId,
+        { nights, startDate: Date.parse(startDate), amount },
+        { new: true }
+    )
         .then((updatedBooking) => res.redirect("/userProfile")) // go to the details page to see the updates
         .catch((error) => next(error));
 });
