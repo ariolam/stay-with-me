@@ -432,3 +432,72 @@ input {
     text-decoration: none;
     background-position: right center;
 }
+.main {
+    text-align: center;
+    padding-top: 20px;
+}
+/* .upload {
+  margin-right: 20px;
+} */
+.profile {
+    position: absolute;
+    top: 45px;
+    right: 0;
+}
+.btn-upload {
+    top: 60px;
+}
+#file-input {
+    color: transparent;
+}
+
+.button {
+    background-color: #b0f4e6;
+    text-align: center;
+}
+.next {
+    margin-left: 85%;
+}
+
+.bottom {
+    display: flexbox;
+    flex-direction: row;
+    justify-content: first baseline;
+}
+.image {
+    padding-bottom: 30px;
+    float: left;
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+}
+.booking-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-container-top {
+    display: flex;
+    gap: 20px;
+}
+.booking-container-bottom {
+    display: flex;
+    padding-bottom: 20px;
+    gap: 5px;
+}
+
+.booking-button {
+    width: 150px;
+}
+.booking-text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* #FCF9EC */
+/* #B0F4E6 */
