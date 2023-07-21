@@ -1,21 +1,19 @@
-<div class="reservation-wrapper">
-  <div class="container">
-    <h1> Your reservation is successful </h1>
-    <div class="row mt-5 reservation-results">
-      <div class="col-4">
-        <img clas="reservation-img img-thumbnail" src=" <%=hotel.image%> " alt="<%=hotel.name %>">
-      </div>
-      <div class="col-8">
-        <h2><%= hotel.name %> </h2>
-        <h3><%= hotel.location %> </h3>
-        <p> Total amount: $<%= booking.amount %></p>
-        <p> Booking Date: <%= booking.date %></p>
-        <p> Price per night: $<%= hotel.pricePerNight %> </p>
-      </div>
-    </div>
-    <div class="nav-links">
-      <button> <a href="/home"> Home </a></button>
-      <button> <a href="/userProfile"> Profile </a></button>
-    </div>
+<div class="button">
+  <h1> Your reservation is successful </h1>
+
+  <h4>We are pleased to inform you that your booking at <%= hotel.name %> is confirmed</h4>
+  <p><%= hotel.name %> </p>
+  <img src=" <%=hotel.image%> " alt="<%=hotel.name %>">
+  <p> <%= booking.date %></p>
+  <p>Price per night: $<%= hotel.pricePerNight %> </p>
+  <p>Total amount: $<%= booking.amount %></p>
+  <div>
+
+    <p><%= hotel.guests %> </p>
+
+    <p><%= hotel.location %> </p>
+
   </div>
+  <button> <a href="/home"> Home </a></button>
+  <button> <a href="/userProfile"> Profile </a></button>
 </div>

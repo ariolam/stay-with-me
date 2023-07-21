@@ -1,31 +1,46 @@
-<p> Hello <%= user.username %>!</p>
-<form action="/userProfile" method="POST" enctype="multipart/form-data">
-  <label>
-    <input type="file" name="imageUrl" accept="image/png, image/jpg">
-    <button type="submit">Upload image</button>
-  </label>
+<div class="main">
+  <h2> 👋🏻 Hello <%= user.username %>!</h2>
+  <h4>Let's plan your next journey with us...</h4>
+  <p>We are greatful to have you as our customer.</p>
+</div>
 
+<form class="profile" action="/userProfile" method="POST" enctype="multipart/form-data">
+  <img src="<%= user.image %>" style="max-height:75px;width:90px;" alt="image" />
+  <label>
+    <input type="file" id="file-input" name="imageUrl" accept="image/png, image/jpg">
+    <button style="margin: auto; text-align: center;" type="submit">Upload image</button>
+  </label>
 </form>
-<h1 class="bg-primary">My Bookings</h1>
-<img src="<%= user.image %>" alt="image" />
+
+<h1 class="button">My Bookings</h1>
+
 
 <% bookings.forEach(booking => { %>
-<p> <%= booking.date %></p>
-<p> Total: $ <%=booking.hotel.pricePerNight *  booking.nights %> </p>
-<p> <%= booking.nights %></p>
-<p> <%= booking.startDate %></p>
-<div>
-  <p><%= booking.hotel.name %> </p>
-  <p><%= booking.hotel.guests %> </p>
-  <p><%= booking.hotel.pricePerNight %> </p>
-  <p><%= booking.hotel.location %> </p>
-  <img src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
+<div class="booking-container">
+  <div class="booking-container-top">
+    <img class="image" src=" <%= booking.hotel.image%> " alt="<%= booking.hotel.name %>">
+    <div class="booking-text">
+      <h3><%= booking.hotel.name %> </h3>
+      <p> <%= booking.date %></p>
+      <p>Price per night: $<%= booking.hotel.pricePerNight %> </p>
+      <p> Total amount: $<%= booking.amount %></p>
+      <p><%= booking.hotel.guests %> </p>
+
+      <h4><%= booking.hotel.location %> </h4>
+    </div>
+  </div>
+  <div class="booking-container-bottom">
+
+
+    <form action="/home/<%- booking.id %>/delete" method="POST">
+      <button class="booking-button">Delete</button>
+    </form>
+    <button class="booking-button">
+      <a href="/home/<%= booking.id %>/edit"> Update </a> <%#!-- link to redirect to the edit form for each specific booking  --%>
+    </button>
+  </div>
 </div>
-<form action="/home/<%- booking.id %>/delete" method="POST">
-  <button>Delete</button>
-</form>
-<button>
-  <a href="/home/<%= booking.id %>/edit"> Update </a> <%#!-- link to redirect to the edit form for each specific booking  --%>
-</button>
 <% }) %>
-<button> <a href="/home"> Next</a></button>
+
+
+<button class="next"> <a href="/home"> Next</a></button>
